@@ -1,6 +1,13 @@
 name: Notification to Push
 
-on: [push]
+on:
+  workflow_call:
+    secrets:
+      DISCORD_WEBHOOK:
+        required: true
+  push:
+    branches:
+      - master
 
 jobs:
 
